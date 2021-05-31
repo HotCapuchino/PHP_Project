@@ -1,0 +1,16 @@
+.none {
+    display: none;
+}
+.error-warning {
+    color: #bb1e06;
+    margin-bottom: 7px;
+}
+.wrong_input {
+    border-bottom: 2px solid #bb1e06;
+}
+.error-block {
+    margin-top: 7px;
+    padding: 10px 30px;
+    text-align: center;
+    border: 2px solid #f6bf48;
+}
