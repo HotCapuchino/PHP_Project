@@ -30,6 +30,12 @@ class Model {
         return $this->session->get($key);
     }
 
+    public function eraseData($key) {
+        if (!$this->session->erase($key)) {
+            echo 'Oops! Error occurred!';
+        };
+    }
+
     private function connectToDB() {
         $this->db_operator = new DatabaseOperator();
         if (!$this->db_operator) {

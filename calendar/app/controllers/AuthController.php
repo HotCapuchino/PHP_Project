@@ -19,6 +19,7 @@ class AuthController extends Controller {
             $this->error_message = $login_payload['error_message'];
             $this->user_values = $login_payload['user_values'];
         }
+        $this->model->eraseData('login_payload');
         $this->view->displayTemplate();
         $this->view->displayContent([
             'error_fields' => $this->error_fields,
@@ -42,7 +43,6 @@ class AuthController extends Controller {
                 'user_values' => $user_values
             ];
             $this->model->saveData('login_payload', $login_payload);
-            $this->model->getData('login_payload');
             $this->getBack();
         }
     }
@@ -51,6 +51,7 @@ class AuthController extends Controller {
         if ($this->model->logout()) {
             $this->redirect('/');
         } else {
+            $this->model->eraseData('user_id');
             $this->model->saveData('logout_error', true);
             $this->getBack();
         }

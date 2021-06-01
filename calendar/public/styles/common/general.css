@@ -1,16 +1,33 @@
 .none {
-    display: none;
+    display: none !important;
 }
 .error-warning {
-    color: #bb1e06;
+    color: #dcdcdc !important;
     margin-bottom: 7px;
 }
 .wrong_input {
-    border-bottom: 2px solid #bb1e06;
+    border-bottom: 2px solid #e09616 !important;
 }
 .error-block {
     margin-top: 7px;
     padding: 10px 30px;
     text-align: center;
-    border: 2px solid #f6bf48;
+    border: 2px solid #f6bf48 !important; 
+}
+* {
+    font-family: 'Roboto', sans-serif;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #1e57b8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dcdcdc;
 }

@@ -33,6 +33,15 @@ class Session {
         return $_SESSION[$key];
     }
 
+    public function erase($key) {
+        session_start();
+        unset($_SESSION[$key]);
+        if (!$_SESSION[$key]) {
+            return true;
+        }
+        return false;
+    }
+
     public function end() {
         session_start();
         $_SESSION['isLogged'] = false;

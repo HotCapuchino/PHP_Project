@@ -1,0 +1,65 @@
+.general-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e57b8;
+    padding: 20px 40px 80px 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.auth-form__heading {
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #dcdcdc;
+}
+label {
+    display: block;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+input, input:focus, input:focus-visible, input:focus-within {
+    background-color: #1e57b8;
+    color: #e09616;
+    font-size: 14px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #e09616;
+} 
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #e09616;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #e09616;
+}
+.register-block {
+    background-color: #1e57b8;
+    padding: 20px 40px;
+    border-radius: 5px;
+    color: #dcdcdc;
+}
+.register-block__question {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.register-block__register-link {
+    font-size: 12px;
+}
+.register-block__register-link:hover {
+    color: #e09616;
+}
+.auth-form__login-btn {
+    background-color: #dcdcdc;
+    padding: 5px 0px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+.auth-form__login-btn:hover {
+    color: #1e57b8;
+}

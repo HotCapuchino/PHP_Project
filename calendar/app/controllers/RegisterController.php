@@ -13,6 +13,14 @@ class RegisterController extends Controller {
         if ($this->model->isLoggedIn()) {
             $this->redirect('calendar');
         }
+        $register_payload = $this->model->getData('register_payload');
+        if ($register_payload) {
+            $this->error_fields = $this->model->getData('error_fields');
+            $this->error_message = $this->model->getData('error_message');
+            $this->user_values = $this->model->getData('user_values');
+        }
+        print_r($register_payload);
+        $this->model->eraseData('register_payload');
         $this->view->displayTemplate();
         $this->view->displayContent([
             'error_fields' => $this->error_fields,
@@ -34,6 +42,7 @@ class RegisterController extends Controller {
                 'error_message' => $error_message,
                 'user_values' => $user_values
             ];
+            print_r($register_payload);
             $this->model->saveData('register_payload', $register_payload);
             $this->getBack();
         }
