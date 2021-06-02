@@ -2,6 +2,12 @@
     <div class="content-wrapper">
         <form action="/login" class="auth-form" method="POST">
             <h1 class="auth-form__heading">Login Calendar</h1>
+            <?php 
+                $error_block_class = '';
+                if (isset($error_message)) {
+                    $error_block_class = 'error-block';
+                }
+            ?>
             <div <?= 'class="' . $error_block_class . '"' ?>><?= $error_message ?></div>
             <label class="login-block">
                 <?php

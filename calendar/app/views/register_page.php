@@ -1,7 +1,3 @@
-<?php 
-    print_r($error_fields);
-    print_r($error_message);
-?>
 <div class="general-wrapper">
     <div class="content-wrapper">
         <form action="/register/sign-up" class="register-form" method="POST">

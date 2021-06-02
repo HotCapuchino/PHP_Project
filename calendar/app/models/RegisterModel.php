@@ -21,6 +21,9 @@ class RegisterModel extends Model {
             $result = $this->db_operator->executeQuery($register_sql, $register_params);
             if ($result) {
                 $this->session->start();
+                $user_id = $this->getRegisteredID();
+                $user_id = $this->getRegisteredID();
+                $this->saveData('user_id', $user_id[0][0]);
                 return true;
             } else {
                 $errors['error_message'] = 'Something went wrong while registering you...';
@@ -29,6 +32,11 @@ class RegisterModel extends Model {
         } else {
             return $errors;
         }
+    }
+
+    private function getRegisteredID() {
+        $sql = "SELECT id FROM `users` ORDER BY id DESC LIMIT 1;";
+        return $this->db_operator->executeQuery($sql);
     }
 
     private function validateFields($fields) {

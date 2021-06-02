@@ -18,7 +18,7 @@ class AuthModel extends Model {
                 return true;
             } else {
                 $errors['error_message'] = 'Wrong login or password!';
-                 return $errors;
+                return $errors;
             } 
         } else {
             return $errors;
